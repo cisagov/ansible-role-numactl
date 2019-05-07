@@ -1,2 +1,7 @@
 ---
-# tasks file for skeleton
+# tasks file for numactl
+
+- name: Install numactl
+  package:
+    name:
+      - numactl
