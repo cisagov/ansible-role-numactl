@@ -2,6 +2,6 @@
 # tasks file for numactl
 
 - name: Install numactl
-  package:
+  ansible.builtin.package:
     name:
       - numactl
