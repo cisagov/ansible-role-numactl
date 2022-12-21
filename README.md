@@ -1,8 +1,7 @@
 # ansible-role-numactl #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-numactl/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-numactl/actions)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-numactl.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-numactl/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-numactl.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-numactl/context:python)
+[![CodeQL](https://github.com/cisagov/ansible-role-numactl/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-numactl/actions/workflows/codeql-analysis.yml)
 
 An Ansible role for installing
 [numactl](https://github.com/numactl/numactl).
@@ -34,8 +33,10 @@ Here's how to use it in a playbook:
 - hosts: all
   become: yes
   become_method: sudo
-  roles:
-    - numactl
+  tasks:
+    - name: Install numactl
+      ansible.builtin.include_role:
+        name: numactl
 ```
 
 ## Contributing ##
